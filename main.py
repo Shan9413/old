@@ -42,11 +42,9 @@ bot = Client("bot",
              bot_token= "5758377234:AAH-xBcK8NTmWJOqbxqNwRDsVQtfX6RaYRg",
              api_id="24525445",
              api_hash="ec30d2a64a99aa17518c6506860dcf43")
-auth_users = ["5241758521,5604657476"
-    int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
+auth_users = [int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
 sudo_users = auth_users
-sudo_groups = ["-1001642935380"
-    int(chat) for chat in os.environ.get("GROUPS").split(",") if chat != '']
+sudo_groups = ["int(chat) for chat in os.environ.get("GROUPS").split(",") if chat != '']
 
 keyboard = InlineKeyboardMarkup(
     [
