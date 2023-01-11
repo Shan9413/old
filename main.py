@@ -39,9 +39,9 @@ import io
 
 
 bot = Client("bot",
-             bot_token= "5758377234:AAH-xBcK8NTmWJOqbxqNwRDsVQtfX6RaYRg",
+             bot_token= "5928148408:AAEg2_X9w4-qSfdgvwibfFV7VhehrCqK3iU",
              api_id="24525445",
-             api_hash="5928148408:AAEg2_X9w4-qSfdgvwibfFV7VhehrCqK3iU")
+             api_hash="ec30d2a64a99aa17518c6506860dcf43")
 sudo_users = 5604657476
 sudo_groups = -1001642935380
 
