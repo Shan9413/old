@@ -43,7 +43,7 @@ bot = Client("bot",
              api_id="24525445",
              api_hash="5928148408:AAEg2_X9w4-qSfdgvwibfFV7VhehrCqK3iU")
 sudo_users = 5604657476
-sudo_groups = 
+sudo_groups = -1001642935380
 
 keyboard = InlineKeyboardMarkup(
     [
