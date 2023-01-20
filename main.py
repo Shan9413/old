@@ -39,7 +39,7 @@ import io
 
 
 bot = Client("bot",
-             bot_token= "5928148408:AAEg2_X9w4-qSfdgvwibfFV7VhehrCqK3iU",
+             bot_token= "5928148408:AAGB8WADr03qTtrRtzIHGR6fvTe4XC21zcg",
              api_id="24525445",
              api_hash="ec30d2a64a99aa17518c6506860dcf43")
 sudo_users = 5604657476
