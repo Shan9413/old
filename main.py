@@ -39,11 +39,11 @@ import io
 
 
 bot = Client("bot",
-             bot_token= "",
-             api_id="24525445",
-             api_hash="ec30d2a64a99aa17518c6506860dcf43")
-sudo_users = 5604657476
-sudo_groups = -1001642935380
+             bot_token= "6144745485:AAFFSe33wLuWwKAWMkau8mYopgJT0OoOCmE",
+             api_id="952608",
+             api_hash="8d8d0ad8e3d4bcd54420190f57da78ad")
+sudo_users = 818269274
+sudo_groups = -1001476904215
 
 keyboard = InlineKeyboardMarkup(
     [
