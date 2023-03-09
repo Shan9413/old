@@ -9,7 +9,3 @@ aiofiles
 asyncio
 pycurl
 humanize
-ethon
-cryptg
-telethon
-python-decouple
