@@ -64,8 +64,9 @@ def hrt(seconds, precision = 0):
 
 
 timer = Timer()
-async def progress_bar(current,total,reply,start):
-      if timer.can_send():
+
+async def progress_bar(current, total, reply, start):
+    if timer.can_send():
         now = time.time()
         diff = now - start
         if diff < 1:
@@ -74,11 +75,24 @@ async def progress_bar(current,total,reply,start):
             perc = f"{current * 100 / total:.1f}%"
             elapsed_time = round(diff)
             speed = current / elapsed_time
-            sp=str(hrb(speed))+"ps"
-            tot=hrb(total)
-            cur=hrb(current)
+            remaining_bytes = total - current
+            if speed > 0:
+                eta_seconds = remaining_bytes / speed
+                eta = hrt(eta_seconds, precision=1)
+            else:
+                eta = "-"
+            sp = str(hrb(speed)) + "/s"
+            tot = hrb(total)
+            cur = hrb(current)
+            
+            # Calculate progress bar dots
+            bar_length = 20
+            completed_length = int(current * bar_length / total)
+            remaining_length = bar_length - completed_length
+            progress_bar = "●" * completed_length + "○" * remaining_length
+            
             try:
-                await reply.edit(f'`┌ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 📈 -【 {perc} 】\n├ 𝙎𝙥𝙚𝙚𝙙 🧲 -【 {sp} 】\n└ 𝙎𝙞𝙯𝙚 📂 -【 {cur} / {tot} 】`')
-               
+                await reply.edit(f"`┌ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 📈 : {perc} \n├ 𝙎𝙥𝙚𝙚𝙙 🧲 : {sp} \n├ 𝙀𝙏𝘼 ⏳ : {eta} \n├ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 🎯 : {progress_bar} \n└ 𝙎𝙞𝙯𝙚 : {cur} / {tot}`")
             except FloodWait as e:
                 time.sleep(e.x)
+
