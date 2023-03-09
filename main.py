@@ -301,14 +301,14 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
             elif ytf == "0" or "unknown" in out:
                 cmd = f'yt-dlp -f "{ytf}" --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
-            elif ".pdf" or "download" in url:
+            elif ".pdf" in url:
                 cmd = "pdf"
             else:
                 cmd = f'yt-dlp -f "{ytf}+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
 
             try:
                 Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
-                prog = await m.reply_text(Show)
+                prog = await bot.send_message(m.chat.id, Show)
                 cc = f"**Name »** {name1} {res}.mkv\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
                 cc1 = f"**Name »** ** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
                 #                         await prog.delete (True)
@@ -321,7 +321,7 @@ async def account_login(bot: Client, m: Message):
                 #                         reply = await m.reply_text(f"Uploading - `{name}`")
                 #                         time.sleep(1)
                 #                         start_time = time.time()
-                #                         await m.reply_document(ka,caption=cc1)
+                #                         await bot.send_document(m.chat.id, ka, caption=cc1)
                 #                         count+=1
                 #                         await reply.delete (True)
                 #                         time.sleep(1)
@@ -336,10 +336,10 @@ async def account_login(bot: Client, m: Message):
                         ka = await helper.aio(url, name)
                         await prog.delete(True)
                         time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        reply = await bot.send_message(m.chat.id, f"Uploading - ```{name}```")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(
+                        await bot.send_document(m.chat.id, 
                             ka,
                             caption=
                             f"**Name »** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
@@ -366,6 +366,7 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_text(
                     f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
                 )
+                count += 1
                 continue
 
     except Exception as e:
