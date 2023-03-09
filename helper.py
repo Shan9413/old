@@ -158,10 +158,10 @@ async def download_video(url,cmd, name):
         return os.path.isfile.splitext[0] + "." + "mp4"
 
 async def send_doc(bot: Client, m: Message,cc,ka,cc1,prog,count,name):
-    reply = await m.reply_text(f"Uploading - `{name}`")
+    reply = await bot.send_message(m.chat.id, f"Uploading - `{name}`")
     time.sleep(1)
     start_time = time.time()
-    await m.reply_document(ka,caption=cc1)
+    await bot.send.message(m.chat.id, ka,caption=cc1)
     count+=1
     await reply.delete (True)
     time.sleep(1)
@@ -172,7 +172,7 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
     
     subprocess.run(f'ffmpeg -i "{filename}" -ss 00:00:12 -vframes 1 "{filename}.jpg"', shell=True)
     await prog.delete (True)
-    reply = await m.reply_text(f"**Uploading ...** - `{name}`")
+    reply = await bot.send_message(m.chat.id, f"**Uploading ...** - `{name}`")
     try:
         if thumb == "no":
             thumbnail = f"{filename}.jpg"
@@ -186,9 +186,9 @@ async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):
     start_time = time.time()
 
     try:
-        await m.reply_video(filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
+        await bot.send_video(m.chat.id, filename,caption=cc, supports_streaming=True,height=720,width=1280,thumb=thumbnail,duration=dur, progress=progress_bar,progress_args=(reply,start_time))
     except Exception:
-        await m.reply_document(filename,caption=cc, progress=progress_bar,progress_args=(reply,start_time))
+        await bot.send_document(m.chat.id, filename,caption=cc, progress=progress_bar,progress_args=(reply,start_time))
 
     
     os.remove(filename)
