@@ -47,9 +47,9 @@ async def cancel(_, m):
     return
 
 
-@bot.on_message(filters.command("restart") & (filters.chat(sudo_group)))
+@bot.on_message(filters.command("stop") & (filters.chat(sudo_group)))
 async def restart_handler(_, m):
-    await m.reply_text("Restarted!", True)
+    await m.reply_text("Restarted !", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
