@@ -89,7 +89,7 @@ async def progress_bar(current, total, reply, start):
             bar_length = 12
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
-            progress_bar = "●" * completed_length + "○" * remaining_length
+            progress_bar = "■" * completed_length + "□" * remaining_length
             
             try:
                 await reply.edit(f"`┌ 𝙋𝙧𝙤𝙜𝙧𝙚𝙨𝙨 📥 - {perc} \n├ 𝙎𝙥𝙚𝙚𝙙 ⚡ - {sp} \n├ 𝙀𝙏𝘼 ⏳ : {eta} \n├ 🎯 : {progress_bar} \n└ 𝙎𝙞𝙯𝙚 ⌛ - {cur} / {tot}`\n\n**𝐌𝐚𝐢𝐧 @OfficialVivekTomarBro**\n\n**𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲 @VivekTomarBro 😎**\n')
