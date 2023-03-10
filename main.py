@@ -53,7 +53,20 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["pro_txt"]) & (filters.chat(sudo_group)))
+def superSoup(link):
+    req = requests.get(link, headers={'Referer': 'http://vod.visionias.in/'})
+    if req.status_code != 200:
+        return
+    return BeautifulSoup(req.text, 'lxml')
+
+def get_va(link):
+    streamlink = superSoup(link)
+    link = streamlink.find("script").string.split("url: ")[-1].split('",')[0].replace('"','')
+    return link
+
+
+
+@bot.on_message(filters.command(["txt"]) & (filters.chat(sudo_group)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
             "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : NAAM TO SUNA HOGA**\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}")
@@ -119,6 +132,11 @@ async def account_login(bot: Client, m: Message):
 
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/","").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").strip()
+
+
+            if "visionias" in url:
+                url = get_va(url)
+                name = name1
 
             if raw_text2 == "144":
 
