@@ -44,11 +44,8 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_group)))
 async def cancel(_, m):
-    editable = await m.reply_text("𝐂𝐚𝐧𝐜𝐞𝐥𝐥𝐢𝐧𝐠 𝐀𝐥𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐏𝐥𝐳 𝐖𝐚𝐢𝐭")
-    global cancel
-    cancel = True
-    await editable.edit("𝐂𝐚𝐧𝐜𝐞𝐥𝐥𝐞𝐝! 🥹")
-    return
+    await m.reply_text("𝐂𝐚𝐧𝐜𝐞𝐥𝐥𝐢𝐧𝐠 𝐀𝐥𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐏𝐥𝐳 𝐖𝐚𝐢𝐭 🤗", True)
+    os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 @bot.on_message(filters.command("restart") & (filters.chat(sudo_group)))
@@ -73,7 +70,7 @@ def get_va(link):
 @bot.on_message(filters.command(["txt"]) & (filters.chat(sudo_group)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-            "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : NAAM TO SUNA HOGA**\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}")
+            "𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋!\n\n➠𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 ♥️\n\n➠𝐈 𝐜𝐚𝐧 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐕𝐢𝐝𝐞𝐨𝐬 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐎𝐧𝐞 𝐁𝐲 𝐎𝐧𝐞.\n\n➠𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲: @VivekTomarBro\n\n➠𝐍𝐨𝐰 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -114,7 +111,7 @@ async def account_login(bot: Client, m: Message):
     raw_text2 = input2.text
 
     editable4 = await m.reply_text(
-        "Now send the **Thumb url**\nEg : ```https://telegra.ph/file/d9e24878bd4aba05049a1.jpg```\n\nor Send **no**"
+        "Now send the **Thumb url**\nEg : ```https://te.legra.ph/file/2d9ee5e66bb711bd15a15.jpg```\n\nor Send **no**"
     )
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
@@ -329,10 +326,10 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**Bot By :-** @VivekTomarBro"
                 prog = await bot.send_message(m.chat.id, Show)
-                cc = f"**Name »** {name1} {res}.mkv\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
-                cc1 = f"**Name »** ** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}"
+                cc = f"**Name »** {name1} {res}.mkv\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n**Join »** @OfficialVivekTomarBro"
+                cc1 = f"**Name »** ** {name1} {res}.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n**Join »** @OfficialVivekTomarBro"
                 #                         await prog.delete (True)
                 #                 if cmd == "pdf" or "drive" in url:
                 #                     try:
