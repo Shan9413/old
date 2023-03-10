@@ -86,7 +86,7 @@ async def progress_bar(current, total, reply, start):
             cur = hrb(current)
             
             # Calculate progress bar dots
-            bar_length = 12
+            bar_length = 10
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
             progress_bar = "■" * completed_length + "□" * remaining_length
