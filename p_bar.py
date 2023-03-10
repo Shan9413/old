@@ -86,13 +86,13 @@ async def progress_bar(current, total, reply, start):
             cur = hrb(current)
             
             # Calculate progress bar dots
-            bar_length = 10
+            bar_length = 15
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
             progress_bar = "■" * completed_length + "□" * remaining_length
             
             try:
-                await reply.edit(f"`➠𝙿𝚛𝚘𝚐𝚛𝚎𝚜𝚜 𝙱𝚊𝚛 :- {progress_bar} \n➠𝚂𝚒𝚣𝚎 :- {cur} / {tot} \n➠𝙿𝚛𝚘𝚌𝚎𝚜𝚜 :- {perc}\n➠𝚂𝚙𝚎𝚎𝚍 :- {sp} \n➠𝙴𝚃𝙰 :- {eta}\n\n𝐁𝐎𝐓 𝐁𝐘» @VivekTomarBro")
+                await reply.edit(f"`➠𝙿𝚛𝚘𝚐𝚛𝚎𝚜𝚜 𝙱𝚊𝚛 :- [{progress_bar}] \n➠𝚂𝚒𝚣𝚎 :- {cur} / {tot} \n➠𝙿𝚛𝚘𝚌𝚎𝚜𝚜 :- {perc}\n➠𝚂𝚙𝚎𝚎𝚍 :- {sp} \n➠𝙴𝚃𝙰 :- {eta}\n\n𝐁𝐎𝐓 𝐁𝐘» @VivekTomarBro")
             except FloodWait as e:
                 time.sleep(e.x)
 
