@@ -143,7 +143,7 @@ async def download_video(url,cmd, name):
     if "visionias" in cmd and k.returncode != 0:
         await asyncio.sleep(5)
         await download_video(url,cmd, name)
-    try
+    try:
         if os.path.isfile(name):
             return name
         elif os.path.isfile(f"{name}.webm"):
