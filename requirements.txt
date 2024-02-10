@@ -4,7 +4,7 @@ requests
 pyromod==1.5
 yt-dlp
 ffmpeg
-aiohttp==3.9.1
+aiohttp==3.9.2
 aiofiles
 asyncio
 pycurl
