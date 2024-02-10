@@ -31,9 +31,9 @@ import io
 
 bot = Client(
      "bot",
-      api_id=25526898,
-      api_hash=abd3843f8151f952fbfd521c2404a8ba, 
-      bot_token=6746876285:AAGnUDNwDvWu4RfbkSSiQe8gt-2lU-9p-Bk)
+      api_id= 25526898,
+      api_hash= abd3843f8151f952fbfd521c2404a8ba, 
+      bot_token= 6746876285:AAGnUDNwDvWu4RfbkSSiQe8gt-2lU-9p-Bk)
 
 
 @bot.on_message(filters.command(["start"]))
