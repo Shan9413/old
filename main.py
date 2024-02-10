@@ -31,9 +31,9 @@ import io
 
 bot = Client(
      "bot",
-      api_id=api_id,
-      api_hash=api_hash, 
-      bot_token=bot_token)
+      api_id=25526898,
+      api_hash=abd3843f8151f952fbfd521c2404a8ba, 
+      bot_token=6746876285:AAGnUDNwDvWu4RfbkSSiQe8gt-2lU-9p-Bk)
 
 
 @bot.on_message(filters.command(["start"]))
@@ -42,7 +42,7 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋!\n\n➠𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 ♥️\n\n➠𝐔𝐬𝐞 /txt 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞.\n\n➠𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲: @VivekTomarBro\n")
 
 
-@bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_group)))
+@bot.on_message(filters.command(["cancel"]))
 async def cancel(_, m):
     await m.reply_text("𝐂𝐚𝐧𝐜𝐞𝐥𝐥𝐢𝐧𝐠 𝐀𝐥𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐏𝐥𝐳 𝐖𝐚𝐢𝐭 🤗", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
