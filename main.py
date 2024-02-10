@@ -29,11 +29,10 @@ import os
 import io
 #import pycurl
 
-bot = Client(
-     "bot",
-      api_id=api_id,
-      api_hash=api_hash, 
-      bot_token=bot_token)
+bot = Client("bot",
+             bot_token= "6923349541:AAFc7_MEXoKYHajAKFTtMo4QzUb8KO7J82E",
+             api_id= 20088962,
+             api_hash= "257f47d347157555890a64b12bc0134f")
 
 
 @bot.on_message(filters.command(["start"]))
